@@ -1,0 +1,17 @@
+{
+  "name": "unitygamenodejsserver",
+  "version": "1.0.0",
+  "description": "NOthing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JimBai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.0",
+    "websocket": "^1.0.34",
+    "ws": "^8.6.0"
+  }
+}
