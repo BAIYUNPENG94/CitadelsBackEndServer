@@ -54,13 +54,14 @@ function socketLayer() {
         var parsedData = toolBox.stringObjParser(data);
         console.log('001 receice command:', parsedData);
         var feedBack = dataComuLayer.commandDeliver(player, parsedData);
-        console.log('011 receice feedback about to send:', feedBack);
-        if (feedBack === {}) {
+        // Has problem, need fix
+        if (Object.keys(feedBack).length === 0) {
             feedback = {
                 playerId: player.playerId,
                 data: 'none',
             }
         }
+        console.log('002 receice feedback about to send:', feedBack);
         toolBox.sendDataToClient(feedBack, player.playerId);
     }
 };

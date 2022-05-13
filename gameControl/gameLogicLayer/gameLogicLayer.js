@@ -1,6 +1,7 @@
 const net=  require('net')
 var ToolBox       = require('../toolBox/toolBox');
 var publicData    = require('../toolBox/publicData');
+var cardHolder    = require('../toolBox/cardHolder');
 
 function gameLogicLayer() {
 
@@ -67,9 +68,9 @@ function gameLogicLayer() {
     /* Data contains {command:'SCC'} */
     this.serveCharaCards = (player, data) => {
         var cardsPack = [];
-        for (var card in publicData.characterCards) {
-            if (!publicData.characterCards[card].abandoned) {
-                cardsPack.push(publicData.characterCards[card].cardName);
+        for (var card in cardHolder.characterCards) {
+            if (!cardHolder.characterCards[card].abandoned) {
+                cardsPack.push(cardHolder.characterCards[card].cardName);
             }
         }
         var responsePack = {
@@ -81,9 +82,9 @@ function gameLogicLayer() {
 
     /* Data contains {command:'CCC', chosenChar} */
     this.chooseCharaCard = (player, data) => {
-        for (var card in publicData.characterCards) {
-            if (publicData.characterCards[card].cardName === data.chosenChar) {
-                publicData.characterCards[card].selected = true;
+        for (var card in cardHolder.characterCards) {
+            if (cardHolder.characterCards[card].cardName === data.chosenChar) {
+                cardHolder.characterCards[card].selected = true;
                 publicData.playerList[player.playerId].character = data.chosenChar;
                 var responsePack = {
                     error: 'no',

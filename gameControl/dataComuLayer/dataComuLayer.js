@@ -1,6 +1,8 @@
-const net = require('net');
+var { debug } = require('console');
+var { response } = require('express');
+var net = require('net');
 var GameLogicLayer = require('../gameLogicLayer/gameLogicLayer');
-const publicData = require('../toolBox/publicData');
+var publicData = require('../toolBox/publicData');
 
 function dataComuLayer() {
 
@@ -10,7 +12,7 @@ function dataComuLayer() {
         var feedBack = {};
 
         switch (data.command) {
-            case 'test':
+            case publicData.command.Test:
                 feedBack.playerId = player.playerId;
                 feedBack.data = 'Server has received your test command';
                 break;
@@ -23,8 +25,9 @@ function dataComuLayer() {
             case publicData.command.StartGame:
                 feedBack = startGame(player, data);
                 break;
-            case publicData.command.serveCharaCards:
+            case publicData.command.ServeCharaCards:
                 feedBack = serveCharaCards(player, data);
+                break;
             case publicData.command.ChooseCharaCard:
                 feedBack = chooseCharaCard(player, data);
                 break;
