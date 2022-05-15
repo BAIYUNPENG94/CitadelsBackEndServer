@@ -64,5 +64,14 @@ module.exports = {
             abandoned    : false,
             selected     : false
         }
+    },
+
+    architectureCards: {
+        testCard1 : {
+            name: 'testCard1',
+        },
+        testCard2 : {
+            name: 'testCard2',
+        }
     }
 }

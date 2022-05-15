@@ -44,9 +44,15 @@ function socketLayer() {
         var player = {
             socketId  : socketId,
             playerId  : String(socketId).slice(2, 7),
-            character : 'none',
+        }
+        var playerInGame = {
+            character    : 'none',
+            coinNum      : 0,
+            archetecture : [],
+            cardsInHand  : [],
         }
         publicData.playerList[player.playerId] = player;
+        publicData.playerListInGame[player.playerId] = playerInGame;
         return player;
     }
 

@@ -29,6 +29,15 @@ function toolBox() {
         return stringObj;
     }
 
+    this.generateBasicFBPack = (isOK, playerId, content) => {
+        var pack = {
+            err      : isOK? 'no' : 'yes',
+            playerId : playerId,
+            content  : content,
+        }
+        return pack;
+    }
+
 }
 
 module.exports = toolBox;

@@ -1,6 +1,27 @@
 module.exports = {
+    /* 
+     * key: socketId
+     * value: socket
+     */
     socketList : {},
+    /*
+     * key: playerId
+     * value: {
+     *   socketId,
+     *   playerId
+     * }
+     */
     playerList : {},
+    /*
+     * key: playerId
+     * value: {
+     *   character,
+     *   coinNum,
+     *   archetecture: [],
+     *   cardsInHand: [],
+     * }
+     */
+    playerListInGame : {},
     currentStatus: 'NoRoom',
     command: {
         Test              : 'T',
