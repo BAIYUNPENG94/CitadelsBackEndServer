@@ -8,14 +8,16 @@ function charaPublicFuncs() {
 
         self = {
 
-            getCoins: (coinsN) => {
+            id      : playerId,
+
+            getCoins: (num) => {
                 try {
-                    publicData.playerListInGame[playerId].coinNum += coinsN;
+                    publicData.playerListInGame[id].coinNum += num;
                 } catch(err) {
-                    return toolBox.generateBasicFBPack(false, playerId, err);
+                    return toolBox.generateBasicFBPack(false, id, err);
                 }
-                console.log(playerId + 'has chosen to take two coins.');
-                return toolBox.generateBasicFBPack(false, playerId, 'OK');
+                console.log(id + 'has chosen to take two coins.');
+                return toolBox.generateBasicFBPack(false, id, 'OK');
             },
 
             serveCards: (num) => {
@@ -23,22 +25,34 @@ function charaPublicFuncs() {
                 try {
                     // TODO: Random take num cards, and add cards to pack function
                 } catch(err) {
-                    return toolBox.generateBasicFBPack(false, playerId, err);
+                    return toolBox.generateBasicFBPack(false, id, err);
                 }
                 return responsePack;
             },
 
             chooseOneCard: (data) => {
                 try{
-                    publicData.playerListInGame[playerId].cardsInHand.push(data);
+                    publicData.playerListInGame[id].cardsInHand.push(data);
                 } catch(err) {
-                    return toolBox.generateBasicFBPack(false, playerId, err);
+                    return toolBox.generateBasicFBPack(false, id, err);
                 }
-                console.log(playerId + 'has chosen one card.');
-                return toolBox.generateBasicFBPack(true, playerId, 'OK');
+                console.log(id + 'has chosen one card.');
+                return toolBox.generateBasicFBPack(true, id, 'OK');
+            },
+
+            buildArchetechture: (data) => {
+                try{
+                    publicData.playerListInGame[id].archetecture.push(data);
+                } catch(err) {
+                    return toolBox.generateBasicFBPack(false, id, err);
+                }
+                console.log(id + 'has build:' + data);
+                return toolBox.generateBasicFBPack(true, id, 'OK');
             }
         };
 
         return self;
     }
 }
+
+module.exports = charaPublicFuncs;
