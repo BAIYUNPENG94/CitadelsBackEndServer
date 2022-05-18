@@ -6,7 +6,8 @@ module.exports = {
             interestArch : 'none,',
             order        : '1',
             abandoned    : false,
-            selected     : false
+            selected     : false,
+            playerId     : 'none'
         },
         thiefCard: {
             cardName     : 'thief',
@@ -14,7 +15,8 @@ module.exports = {
             interestArch : 'none,',
             order        : '2',
             abandoned    : false,
-            selected     : false
+            selected     : false,
+            playerId     : 'none'
         },
         Magician: {
             cardName     : 'magician',
@@ -22,7 +24,8 @@ module.exports = {
             interestArch : 'none,',
             order        : '3',
             abandoned    : false,
-            selected     : false
+            selected     : false,
+            playerId     : 'none'
         },
         kingCard: {
             cardName     : 'king',
@@ -30,7 +33,8 @@ module.exports = {
             interestArch : 'royalArch',
             order        : '4',
             abandoned    : false,
-            selected     : false
+            selected     : false,
+            playerId     : 'none'
         },
         bishopCard: {
             cardName     : 'bishop',
@@ -38,7 +42,8 @@ module.exports = {
             interestArch : 'reliArch',
             order        : '5',
             abandoned    : false,
-            selected     : false
+            selected     : false,
+            playerId     : 'none'
         },
         merchantCard: {
             cardName     : 'merchant',
@@ -46,7 +51,8 @@ module.exports = {
             interestAtch : 'merchArch',
             order        : '6',
             abandoned    : false,
-            selected     : false
+            selected     : false,
+            playerId     : 'none'
         },
         architectCard: {
             cardName     : 'architect',
@@ -54,7 +60,8 @@ module.exports = {
             interestArch : 'none',
             order        : '7',
             abandoned    : false,
-            selected     : false
+            selected     : false,
+            playerId     : 'none'
         },
         warlordCard: {
             cardName     : 'warlord',
@@ -62,7 +69,8 @@ module.exports = {
             interestArch : 'miliArch',
             order        : '8',
             abandoned    : false,
-            selected     : false
+            selected     : false,
+            playerId     : 'none'
         }
     },
 

@@ -1,7 +1,32 @@
 var PublicFunc = require('./publicFunc');
+var publicData = require('../../toolBox/publicData');
+var cardHolder    = require('../toolBox/cardHolder');
+const toolBox = require('../../toolBox/toolBox');
 
-function assain(playerId) {
-    var publicFunc = new PublicFunc();
-    var self = publicFunc.initCharacter(playerId);
+function assain() {
 
+    this.initAssain = (playerId) => {
+        var publicFunc = new PublicFunc();
+        var self = publicFunc.initCharacter(playerId);
+
+        /*
+         * object data contains:
+         * {
+         *   characterName
+         * }
+         */
+        self.kill = (data) => {
+            try {
+                cardHolder[data.characterName].killed = 'true';
+            } catch(err) {
+                return toolBox.generateBasicFBPack(false, self.id, err);
+            }
+            console.log(playerId + 'has killed' + data.characterName);
+            return toolBox.generateBasicFBPack(false, self.id, 'OK');
+        }
+
+        return self;
+    }
 }
+
+module.exports = assain;

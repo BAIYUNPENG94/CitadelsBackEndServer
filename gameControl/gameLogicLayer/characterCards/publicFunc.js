@@ -30,7 +30,7 @@ function charaPublicFuncs() {
                 return responsePack;
             },
 
-            chooseOneCard: (data) => {
+            chooseOneArcCard: (data) => {
                 try{
                     publicData.playerListInGame[id].cardsInHand.push(data);
                 } catch(err) {

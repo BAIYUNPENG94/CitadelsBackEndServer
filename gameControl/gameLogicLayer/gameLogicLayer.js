@@ -85,6 +85,7 @@ function gameLogicLayer() {
         for (var card in cardHolder.characterCards) {
             if (cardHolder.characterCards[card].cardName === data.chosenChar) {
                 cardHolder.characterCards[card].selected = true;
+                cardHolder.characterCards[card].playerId = player.playerId;
                 publicData.playerListInGame[player.playerId].character = data.chosenChar;
                 var responsePack = {
                     error: 'no',
