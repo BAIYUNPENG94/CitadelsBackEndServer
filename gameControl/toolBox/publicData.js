@@ -8,7 +8,7 @@ module.exports = {
      * key: playerId
      * value: {
      *   socketId,
-     *   playerId
+     *   playerId,
      * }
      */
     playerList : {},
@@ -42,6 +42,7 @@ module.exports = {
         numOfPlayers : 0,
         playerQueue  : {},
         playerList   : [],
+        startIndex   : 0,
     },
 }
 

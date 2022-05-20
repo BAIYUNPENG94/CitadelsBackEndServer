@@ -1,3 +1,4 @@
+var cardHolder = require('../../toolBox/cardHolder')
 var publicData = require('../../toolBox/publicData');
 var ToolBox = require('../../toolBox/toolBox');
 
@@ -48,7 +49,24 @@ function charaPublicFuncs() {
                 }
                 console.log(id + 'has build:' + data);
                 return toolBox.generateBasicFBPack(true, id, 'OK');
-            }
+            },
+
+            tax: () => {
+                var interest = ''
+                for (var card in cardHolder.characterCards) {
+                    if (card.cardName === publicData.playerListInGame[playerId].character){
+                        interest = card.interestArch;
+                    }
+                    if (interest != '' && interest != 'none') {
+                        if (publicData.playerListInGame[playerId].cardsInHand != []) {
+                            publicData.playerListInGame[playerId].coinNum +=
+                                publicData.playerListInGame[playerId].cardsInHand.length;
+                            console.log(playerId, 'has collected tax');
+                        }
+                    }
+                    console.log(playerId, 'can not collect tax');
+                }
+            },
         };
 
         return self;

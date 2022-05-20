@@ -17,7 +17,7 @@ function assain() {
          */
         self.kill = (data) => {
             try {
-                cardHolder[data.characterName].killed = 'true';
+                cardHolder[data.characterName].status.push('killed');
             } catch(err) {
                 return toolBox.generateBasicFBPack(false, self.id, err);
             }

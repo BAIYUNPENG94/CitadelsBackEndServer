@@ -7,7 +7,8 @@ module.exports = {
             order        : '1',
             abandoned    : false,
             selected     : false,
-            playerId     : 'none'
+            playerId     : 'none',
+            status       : [],
         },
         thiefCard: {
             cardName     : 'thief',
@@ -16,7 +17,8 @@ module.exports = {
             order        : '2',
             abandoned    : false,
             selected     : false,
-            playerId     : 'none'
+            playerId     : 'none',
+            status       : [],
         },
         Magician: {
             cardName     : 'magician',
@@ -25,7 +27,8 @@ module.exports = {
             order        : '3',
             abandoned    : false,
             selected     : false,
-            playerId     : 'none'
+            playerId     : 'none',
+            status       : [],
         },
         kingCard: {
             cardName     : 'king',
@@ -34,7 +37,8 @@ module.exports = {
             order        : '4',
             abandoned    : false,
             selected     : false,
-            playerId     : 'none'
+            playerId     : 'none',
+            status       : [],
         },
         bishopCard: {
             cardName     : 'bishop',
@@ -43,7 +47,8 @@ module.exports = {
             order        : '5',
             abandoned    : false,
             selected     : false,
-            playerId     : 'none'
+            playerId     : 'none',
+            status       : [],
         },
         merchantCard: {
             cardName     : 'merchant',
@@ -52,7 +57,8 @@ module.exports = {
             order        : '6',
             abandoned    : false,
             selected     : false,
-            playerId     : 'none'
+            playerId     : 'none',
+            status       : [],
         },
         architectCard: {
             cardName     : 'architect',
@@ -61,7 +67,8 @@ module.exports = {
             order        : '7',
             abandoned    : false,
             selected     : false,
-            playerId     : 'none'
+            playerId     : 'none',
+            status       : [],
         },
         warlordCard: {
             cardName     : 'warlord',
@@ -70,16 +77,21 @@ module.exports = {
             order        : '8',
             abandoned    : false,
             selected     : false,
-            playerId     : 'none'
+            playerId     : 'none',
+            status       : [],
         }
     },
 
     architectureCards: {
         testCard1 : {
             name: 'testCard1',
+            property: 'army',
+            addon: 'none',
         },
         testCard2 : {
             name: 'testCard2',
+            property: 'royal',
+            addon: 'none',
         }
     }
 }

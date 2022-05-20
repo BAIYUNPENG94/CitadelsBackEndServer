@@ -9,7 +9,7 @@ function gameLogicLayer() {
         var player = {
             playerId    : id,
             playerName  : name,
-            playerQueue : queue,
+            queue : queue,
         }
         return player;
     }
@@ -24,6 +24,7 @@ function gameLogicLayer() {
         var playerInfo = PlayerInfo(player.playerId, data.hostName, 0);
         publicData.roomInfo.playerList.push(player.playerId);
         publicData.roomInfo.playerQueue[0] = playerInfo;
+        playerInfo.queue = 0;
 
         /* For optimization, future here need to be added some initialize part 
          * ex. Initialize other game logic function parts...
@@ -46,6 +47,7 @@ function gameLogicLayer() {
                 var playerInfo = PlayerInfo(player.playerId, data.name, queue);
                 publicData.roomInfo.playerList.push(player.playerId);
                 publicData.roomInfo.playerQueue[queue] = playerInfo;
+                playerInfo.queue = queue;
                 var responsePack = {
                     error   : 'no',
                     content : 'Successfully join the room',
